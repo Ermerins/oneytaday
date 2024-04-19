@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Oneytaday",
+  "version": "1.0",
+  "description": "Redirects to a randomly selected video from the YouTube homepage.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://youtube.com/*",
+        "https://www.youtube.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
